@@ -7,10 +7,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static java.lang.System.out;
 
 @Configuration
 class LoadDatabase {
@@ -23,15 +24,13 @@ class LoadDatabase {
 
   @Bean
   CommandLineRunner initDatabase(TmdbClient tmdbClient) {
-    List<Movie> movies = new ArrayList<>();
-    IntStream.range(1, 100)
+      List<Movie> movies = IntStream.range(1, 100)
         .parallel()
-        .peek(value -> System.out.print("."))
+        .peek(value -> out.print("."))
         .mapToObj(tmdbClient::populateMovies)
-        .forEach(response -> {
-          List<Movie> movieList = response.getContent().stream().map(Movie::from).collect(Collectors.toList());
-          movies.addAll(movieList);
-        });
+        .flatMap(response -> response.getContent().stream())
+        .map(Movie::from)
+        .collect(Collectors.toList());
 
     return args -> movies.forEach(movieRepository::save);
   }
