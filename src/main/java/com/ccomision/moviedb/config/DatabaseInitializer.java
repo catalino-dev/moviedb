@@ -27,6 +27,7 @@ public class DatabaseInitializer {
     @Bean
     CommandLineRunner initDatabase(TmdbClient tmdbClient) {
         log.info("Initializing TMDB movies database...");
+
         List<Movie> movies = IntStream.range(1, 100)
             .parallel()
             .peek(value -> out.print("."))

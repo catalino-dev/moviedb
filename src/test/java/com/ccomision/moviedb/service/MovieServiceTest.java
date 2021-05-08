@@ -39,7 +39,7 @@ class MovieServiceTest {
         Optional<Movie> actualMovie = service.fetchById(movieId);
 
         // then
-        assertTrue(actualMovie.isPresent(), "Movie was not found");
+        assertTrue(actualMovie.isPresent(), "Movie was found");
         assertSame(actualMovie.get(), movie, "The movie returned was not the same as the mock");
     }
 }

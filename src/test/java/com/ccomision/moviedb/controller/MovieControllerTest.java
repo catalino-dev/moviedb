@@ -3,6 +3,7 @@ package com.ccomision.moviedb.controller;
 import com.ccomision.moviedb.MovieDbTestConfiguration;
 import com.ccomision.moviedb.dto.MovieDto;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,7 +26,8 @@ class MovieControllerTest {
     }
 
     @Test
-    void showAll() {
+    @DisplayName("showAll should show all movies with the given pagination filters")
+    void testShowAll() {
         Pageable pageable = PageRequest.of(1, 10);
         Page<MovieDto> result = controller.showAll(pageable);
 

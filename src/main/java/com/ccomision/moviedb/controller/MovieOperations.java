@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/api/movie")
 public interface MovieOperations {
@@ -31,5 +29,5 @@ public interface MovieOperations {
         @ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
         @ApiResponse(responseCode = "404", description = "Movie not found", content = @Content) })
     @GetMapping("/{id}")
-    Optional<MovieDto> showMovie(@PathVariable Long id);
+    MovieDto showMovie(@PathVariable Long id);
 }
