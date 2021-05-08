@@ -20,8 +20,7 @@ public class TmdbRequestInterceptor implements ClientHttpRequestInterceptor {
     }
 
     @Override
-    public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
-        throws IOException {
+    public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
 
         HttpHeaders httpHeaders = request.getHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);

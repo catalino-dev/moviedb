@@ -3,7 +3,7 @@
     {
       "name": "tmdb.api-key",
       "type": "java.lang.String",
-      "description": "Description for tmdb.api-key."
+      "description": "Read Access Token key for the TMDb API."
     }
   ]
 }

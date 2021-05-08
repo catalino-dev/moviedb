@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalControllerExceptionHandler {
 
-    @ExceptionHandler(MovieNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<String> handleMovieNotFound(RuntimeException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    @ExceptionHandler(MovieNotFoundException.class)
+    public ResponseEntity<String> handleMovieNotFound(MovieNotFoundException ex) {
+        return new ResponseEntity<>(ex.getErrorMessage(), HttpStatus.NOT_FOUND);
     }
 }
