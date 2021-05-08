@@ -19,10 +19,15 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	set('springDocVersion', '1.5.8')
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springdoc:springdoc-openapi-ui:1.5.8'
+	implementation "org.springdoc:springdoc-openapi-ui:${springDocVersion}"
+	implementation "org.springdoc:springdoc-openapi-data-rest:${springDocVersion}"
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'

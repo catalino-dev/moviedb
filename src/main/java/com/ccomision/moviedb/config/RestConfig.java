@@ -8,11 +8,11 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestConfig {
 
-	@Bean(name = "restTemplate")
-	public RestTemplate buildTmdbRestTemplate(RestTemplateBuilder restTemplateBuilder,
-											  TmdbRequestInterceptor tmdbRequestInterceptor) {
-		return restTemplateBuilder
-			.interceptors(tmdbRequestInterceptor)
-			.build();
-	}
+    @Bean(name = "restTemplate")
+    public RestTemplate buildTmdbRestTemplate(RestTemplateBuilder restTemplateBuilder,
+                                              TmdbRequestInterceptor tmdbRequestInterceptor) {
+        return restTemplateBuilder
+            .interceptors(tmdbRequestInterceptor)
+            .build();
+    }
 }

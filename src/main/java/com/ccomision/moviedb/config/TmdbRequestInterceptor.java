@@ -13,19 +13,19 @@ import java.io.IOException;
 @Component
 public class TmdbRequestInterceptor implements ClientHttpRequestInterceptor {
 
-	private final TmdbProperties tmdbProperties;
+    private final TmdbProperties tmdbProperties;
 
-	public TmdbRequestInterceptor(TmdbProperties tmdbProperties) {
-		this.tmdbProperties = tmdbProperties;
-	}
+    public TmdbRequestInterceptor(TmdbProperties tmdbProperties) {
+        this.tmdbProperties = tmdbProperties;
+    }
 
-	@Override
-	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
-			throws IOException {
+    @Override
+    public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
+        throws IOException {
 
-		HttpHeaders httpHeaders = request.getHeaders();
-		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-		httpHeaders.setBearerAuth(tmdbProperties.getApiKey());
-		return execution.execute(request, body);
-	}
+        HttpHeaders httpHeaders = request.getHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        httpHeaders.setBearerAuth(tmdbProperties.getApiKey());
+        return execution.execute(request, body);
+    }
 }

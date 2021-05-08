@@ -11,5 +11,5 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("tmdb")
 public class TmdbProperties {
 
-	private String apiKey;
+    private String apiKey;
 }
