@@ -1,6 +1,7 @@
 package com.ccomision.moviedb.entity;
 
 import com.ccomision.moviedb.dto.MovieDto;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class Movie {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

@@ -16,7 +16,7 @@ import static java.lang.System.out;
 
 @Slf4j
 @Configuration
-class DatabaseInitializer {
+public class DatabaseInitializer {
 
     private final MovieRepository movieRepository;
 
