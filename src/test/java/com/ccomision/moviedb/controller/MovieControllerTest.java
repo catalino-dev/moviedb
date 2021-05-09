@@ -1,22 +1,18 @@
 package com.ccomision.moviedb.controller;
 
-import com.ccomision.moviedb.MovieDbTestConfiguration;
 import com.ccomision.moviedb.entity.Movie;
 import com.ccomision.moviedb.service.MovieService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
@@ -44,7 +40,7 @@ class MovieControllerTest {
 
     @Test
     @DisplayName("showAll should show all movies with the given pagination filters")
-    void showAll() throws Exception {
+    void testShowAllSuccess() throws Exception {
         // setup
         int page = 1;
         int size = 10;
@@ -110,7 +106,7 @@ class MovieControllerTest {
     }
 
     @Test
-    @DisplayName("showMovie should return RESOURCE_NOT_FOUND when fetching a movie that does not exist")
+    @DisplayName("showMovie should return NOT_FOUND https status when fetching a movie that does not exist")
     void testShowMovieWithFailedResourceNotFound() throws Exception {
         // setup
         long movieId = 4L;

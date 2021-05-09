@@ -19,6 +19,12 @@ repositories {
 	mavenCentral()
 }
 
+test {
+    beforeTest { descriptor ->
+        logger.lifecycle("Running: ${descriptor}")
+    }
+}
+
 ext {
 	set('springDocVersion', '1.5.8')
 }
