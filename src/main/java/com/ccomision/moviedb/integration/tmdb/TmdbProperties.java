@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Setter
 @Getter
@@ -20,5 +21,6 @@ public class TmdbProperties {
     private String baseUrl;
 
     @NotNull
+    @Positive
     private int apiMaxPages;
 }
