@@ -13,6 +13,7 @@ public class MovieDtoSerializer extends JsonSerializer<MovieDto> {
     @Override
     public void serialize(MovieDto movieDto, JsonGenerator gen, SerializerProvider serializerProvider) throws IOException {
         gen.writeStartObject();
+        gen.writeNumberField("id", movieDto.getId());
         gen.writeStringField("title", movieDto.getTitle());
         gen.writeStringField("overview", movieDto.getOverview());
         gen.writeStringField("poster", movieDto.getPoster());

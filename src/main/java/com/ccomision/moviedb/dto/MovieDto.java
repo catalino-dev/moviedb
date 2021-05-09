@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Setter
 @Hidden
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieDto {
 
     private Long id;

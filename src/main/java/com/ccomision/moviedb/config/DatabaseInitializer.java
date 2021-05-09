@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static java.lang.System.out;
-
 @Slf4j
 @Configuration
 public class DatabaseInitializer {
@@ -35,7 +33,6 @@ public class DatabaseInitializer {
 
         List<Movie> movies = IntStream.range(1, maxApiPagesToFetch)
             .parallel()
-            .peek(value -> out.print("."))
             .mapToObj(tmdbClient::getAllMovies)
             .flatMap(response -> response.getContent().stream())
             .map(TmdbMovie::toMovie)

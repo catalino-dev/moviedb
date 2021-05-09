@@ -9,16 +9,12 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import io.swagger.v3.oas.annotations.Hidden;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @Hidden
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TmdbMovie {
 
