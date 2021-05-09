@@ -17,13 +17,13 @@
 
 #### b. Run the application
   ```bash
-  gradle bootRun
+  ./gradlew bootRun
   ```
 
 ### Testing and documentation
 #### Running the unit test
   ```bash
-  gradle test
+  ./gradlew test
   ```
 
 #### View the swagger ui docs and use the available API
