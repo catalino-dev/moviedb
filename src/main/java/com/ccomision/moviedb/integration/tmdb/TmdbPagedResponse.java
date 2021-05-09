@@ -1,6 +1,5 @@
-package com.ccomision.moviedb.integration;
+package com.ccomision.moviedb.integration.tmdb;
 
-import com.ccomision.moviedb.dto.MovieDto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -11,10 +10,10 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TmdbMovieResponse {
+public class TmdbPagedResponse {
 
     @JsonProperty("results")
-    List<MovieDto> content;
+    List<TmdbMovie> content;
 
     @JsonProperty("page")
     int number;

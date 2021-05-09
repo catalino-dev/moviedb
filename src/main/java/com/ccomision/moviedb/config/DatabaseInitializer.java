@@ -1,7 +1,9 @@
 package com.ccomision.moviedb.config;
 
 import com.ccomision.moviedb.entity.Movie;
-import com.ccomision.moviedb.integration.TmdbClient;
+import com.ccomision.moviedb.integration.tmdb.TmdbClient;
+import com.ccomision.moviedb.integration.tmdb.TmdbMovie;
+import com.ccomision.moviedb.integration.tmdb.TmdbProperties;
 import com.ccomision.moviedb.repository.MovieRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -18,22 +20,25 @@ import static java.lang.System.out;
 @Configuration
 public class DatabaseInitializer {
 
+    private final TmdbProperties tmdbProperties;
     private final MovieRepository movieRepository;
 
-    DatabaseInitializer(MovieRepository movieRepository) {
+    DatabaseInitializer(TmdbProperties tmdbProperties, MovieRepository movieRepository) {
+        this.tmdbProperties = tmdbProperties;
         this.movieRepository = movieRepository;
     }
 
     @Bean
-    CommandLineRunner initDatabase(TmdbClient tmdbClient) {
-        log.info("Initializing TMDB movies database...");
+    CommandLineRunner initializeMovieDatabase(TmdbClient tmdbClient) {
+        log.info("Initializing TMDb movies database...");
+        int maxApiPagesToFetch = tmdbProperties.getApiMaxPages();
 
-        List<Movie> movies = IntStream.range(1, 100)
+        List<Movie> movies = IntStream.range(1, maxApiPagesToFetch)
             .parallel()
             .peek(value -> out.print("."))
-            .mapToObj(tmdbClient::populateMovies)
+            .mapToObj(tmdbClient::getAllMovies)
             .flatMap(response -> response.getContent().stream())
-            .map(Movie::from)
+            .map(TmdbMovie::toMovie)
             .collect(Collectors.toList());
 
         return args -> movies.forEach(movieRepository::save);

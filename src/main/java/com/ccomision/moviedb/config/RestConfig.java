@@ -1,6 +1,6 @@
 package com.ccomision.moviedb.config;
 
-import com.ccomision.moviedb.integration.TmdbRequestInterceptor;
+import com.ccomision.moviedb.integration.tmdb.TmdbRequestInterceptor;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

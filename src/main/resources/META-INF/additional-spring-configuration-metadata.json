@@ -1,9 +1,19 @@
 {
-  "properties": [
-    {
-      "name": "tmdb.api-key",
-      "type": "java.lang.String",
-      "description": "Read Access Token key for the TMDb API."
-    }
-  ]
+    "properties": [
+        {
+            "name": "tmdb.api-key",
+            "type": "java.lang.String",
+            "description": "Read Access Token key for the TMDb API."
+        },
+        {
+            "name": "tmdb.base-url",
+            "type": "java.lang.String",
+            "description": "Base URL to use for API resources from TMDb."
+        },
+        {
+            "name": "tmdb.api-max-pages",
+            "type": "java.lang.String",
+            "description": "The maximum page to retrieve from TMDb GET API."
+        }
+    ]
 }

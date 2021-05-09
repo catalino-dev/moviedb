@@ -1,6 +1,5 @@
 package com.ccomision.moviedb.entity;
 
-import com.ccomision.moviedb.dto.MovieDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,15 +28,4 @@ public class Movie {
     private Double popularity;
 
     private LocalDate releaseDate;
-
-    public static Movie from(MovieDto movieDto) {
-        Movie movie = new Movie();
-        movie.setTitle(movieDto.getTitle());
-        movie.setOverview(movieDto.getOverview());
-        movie.setPoster(movieDto.getPoster());
-        movie.setVoteAverage(movieDto.getVoteAverage());
-        movie.setPopularity(movieDto.getPopularity());
-        movie.setReleaseDate(movieDto.getReleaseDate());
-        return movie;
-    }
 }
