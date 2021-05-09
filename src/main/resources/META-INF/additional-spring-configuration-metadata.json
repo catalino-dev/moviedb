@@ -12,7 +12,7 @@
         },
         {
             "name": "tmdb.api-max-pages",
-            "type": "java.lang.String",
+            "type": "java.lang.Integer",
             "description": "The maximum page to retrieve from TMDb GET API."
         }
     ]

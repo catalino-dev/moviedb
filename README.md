@@ -2,7 +2,7 @@
 > You one-stop movie catalog API with data from TMDb
 
 ### Features
-- Get movie information with pagination and sorting
+- Get all movies info with pagination and sorting
 - Get single movie info via identifier
 
 ### Prerequisites
