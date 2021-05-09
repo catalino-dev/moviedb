@@ -12,10 +12,10 @@
 ### Setup and run the application
 #### a. Clone the repo
   ```bash
-  git clone git@github.com:ccomision/moviedb.git
+  git clone git@github.com:ccomision/moviedb.git && cd moviedb
   ```
 
-#### b. Run
+#### b. Run the application
   ```bash
   gradle bootRun
   ```
@@ -26,5 +26,5 @@
   gradle test
   ```
 
-#### View the swagger ui docs
+#### View the swagger ui docs and use the available API
   - Go to your preferred browser and type in http://localhost:8080/swagger-ui.html
