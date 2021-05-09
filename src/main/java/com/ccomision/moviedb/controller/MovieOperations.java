@@ -19,10 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@Tag(name = "Movie")
+@Tag(name = "Movie", description = "The movie API")
 public interface MovieOperations {
 
-    @Operation(summary = "Get all movies")
+    /**
+     * Get all catalog of movies
+     *
+     * @param pageable Contains pagination filters used to modify the criteria to be returned
+     *
+     * @return a {@link MovieDto}
+     */
+    @Operation(summary = "Get all catalog of movies")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Found the movie", content = {
             @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Movie.class)))
@@ -31,13 +38,20 @@ public interface MovieOperations {
     @GetMapping
     Page<MovieDto> showAll(@ParameterObject Pageable pageable);
 
-    @Operation(summary = "Get a movie by its id")
+    /**
+     * Get the movie of the given {@code movieId}
+     *
+     * @param movieId The movie identifier
+     *
+     * @return a {@link MovieDto}
+     */
+    @Operation(summary = "Get the requested movie")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Found the movie", content = {
             @Content(mediaType = "application/json", schema = @Schema(implementation = Movie.class))
         }),
         @ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
         @ApiResponse(responseCode = "404", description = "Movie not found", content = @Content) })
-    @GetMapping("/{id}")
-    MovieDto showMovie(@PathVariable Long id);
+    @GetMapping("/{movieId}")
+    MovieDto showMovie(@PathVariable Long movieId);
 }

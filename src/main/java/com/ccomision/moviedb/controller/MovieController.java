@@ -25,8 +25,8 @@ public class MovieController implements MovieOperations {
     }
 
     @Override
-    public MovieDto showMovie(Long id) {
-        return movieService.fetchById(id)
+    public MovieDto showMovie(Long movieId) {
+        return movieService.fetchById(movieId)
             .map(MovieDto::from)
             .orElseThrow(MovieNotFoundException::new);
     }

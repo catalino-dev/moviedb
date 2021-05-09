@@ -1,4 +1,4 @@
-package com.ccomision.moviedb.config;
+package com.ccomision.moviedb.integration;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;

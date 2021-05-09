@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@AllArgsConstructor(staticName = "of")
 public class ApiErrorMessage {
     private String errorCode;
     private String errorMessage;

@@ -11,6 +11,6 @@ public class GlobalControllerExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(MovieNotFoundException.class)
     public ApiErrorMessage handleMovieNotFound(MovieNotFoundException ex) {
-        return new ApiErrorMessage(ex.getErrorCode(), ex.getErrorMessage());
+        return ApiErrorMessage.of(ex.getErrorCode(), ex.getErrorMessage());
     }
 }

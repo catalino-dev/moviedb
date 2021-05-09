@@ -1,4 +1,4 @@
-package com.ccomision.moviedb.config;
+package com.ccomision.moviedb.integration;
 
 import lombok.Getter;
 import lombok.Setter;
