@@ -19,7 +19,7 @@ public class MovieDto {
     private String title;
     private String overview;
     private String poster;
-    private String voteAverage;
+    private Double voteAverage;
     private Double popularity;
     private LocalDate releaseDate;
 

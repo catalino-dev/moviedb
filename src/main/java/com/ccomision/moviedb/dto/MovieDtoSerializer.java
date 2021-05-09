@@ -18,7 +18,7 @@ public class MovieDtoSerializer extends JsonSerializer<MovieDto> {
         gen.writeStringField("overview", movieDto.getOverview());
         gen.writeStringField("poster", movieDto.getPoster());
         gen.writeNumberField("popularity", movieDto.getPopularity());
-        gen.writeStringField("voteAverage", movieDto.getVoteAverage());
+        gen.writeNumberField("voteAverage", movieDto.getVoteAverage());
         gen.writeObjectField("releaseDate", movieDto.getReleaseDate());
         gen.writeEndObject();
     }

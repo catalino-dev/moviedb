@@ -28,7 +28,7 @@ public class TmdbMovie {
     private String poster;
 
     @JsonProperty(value = "vote_average")
-    private String voteAverage;
+    private Double voteAverage;
 
     private Double popularity;
 

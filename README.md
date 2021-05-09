@@ -7,6 +7,7 @@
 
 ### Prerequisites
 - Java 8
+- Gradle
 
 ### Setup and run the application
 #### a. Clone the repo
@@ -26,4 +27,4 @@
   ```
 
 #### View the swagger ui docs
-  - Go to your preferred browser and type in `http://localhost:8080/swagger-ui/index.html`
+  - Go to your preferred browser and type in http://localhost:8080/swagger-ui.html
