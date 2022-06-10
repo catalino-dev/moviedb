@@ -52,7 +52,7 @@ class MovieControllerTest {
         movie1.setOverview("Overview");
         movie1.setPoster("Poster");
         movie1.setPopularity(1.10);
-        movie1.setVoteAverage("40.50");
+        movie1.setVoteAverage(40.5);
         movie1.setReleaseDate(LocalDate.now());
 
         Movie movie2 = new Movie();
@@ -61,7 +61,7 @@ class MovieControllerTest {
         movie2.setOverview("Overview");
         movie2.setPoster("Poster");
         movie2.setPopularity(2.10);
-        movie2.setVoteAverage("99.50");
+        movie2.setVoteAverage(99.5);
         movie2.setReleaseDate(LocalDate.now());
 
         List<Movie> movies = new ArrayList<>();
@@ -91,7 +91,7 @@ class MovieControllerTest {
         movie.setOverview("Overview");
         movie.setPoster("Poster");
         movie.setPopularity(1.10);
-        movie.setVoteAverage("40.50");
+        movie.setVoteAverage(40.5);
         movie.setReleaseDate(LocalDate.now());
 
         when(movieService.fetchById(movieId)).thenReturn(Optional.of(movie));

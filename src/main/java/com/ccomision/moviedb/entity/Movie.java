@@ -30,7 +30,7 @@ public class Movie {
     private String poster;
 
     @Schema(description = "Vote average of the movie.")
-    private String voteAverage;
+    private Double voteAverage;
 
     @Schema(description = "The popularity value of the movie.")
     private Double popularity;
